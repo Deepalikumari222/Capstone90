@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Complaint Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📨 Complaint Tracker</h1>
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'submit')">Submit Complaint</button>
+            <button class="tab-btn" onclick="openTab(event, 'track')">Track Complaints</button>
+        </div>
+
+        <div id="submit" class="tab-content">
+            <form id="complaintForm">
+                <label for="type">Complaint Type:</label>
+                <select id="type" required>
+                    <option value="hostel">Hostel</option>
+                    <option value="mess">Mess</option>
+                    <option value="academic">Academic</option>
+                </select>
+                <label for="desc">Description:</label>
+                <textarea id="desc" required></textarea>
+                <label for="urgency">Urgency:</label>
+                <select id="urgency" required>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <label for="attachments">Attachments:</label>
+                <input type="file" id="attachments">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="track" class="tab-content" style="display:none;">
+            <div id="complaintsList"></div>
+        </div>
+    </div>
+    <script src="js\main.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIT Patna Event Organizer Panel</title>
+    <link rel="stylesheet" href="EventOrganiser.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="IIT Patna Logo" id="iitp-logo">
+            <span>IIT Patna</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Clubs</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Event Organizer Panel</h1>
+            <p>Manage events at IIT Patna with ease.</p>
+            <button class="hero-btn">Explore Now</button>
+        </div>
+    </section>
+
+    <section class="events-section">
+        <div class="controls">
+            <div class="filter-bar">
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <option value="tech">Tech</option>
+                    <option value="cultural">Cultural</option>
+                    <option value="sports">Sports</option>
+                    <option value="academic">Academic</option>
+                    <option value="workshops">Workshops</option>
+                    <option value="hackathons">Hackathons</option>
+                    <option value="clubs">Clubs</option>
+                </select>
+                <input type="text" id="search-bar" placeholder="Search events...">
+            </div>
+            <button id="add-event-btn" class="fab"><i class="fas fa-plus"></i></button>
+        </div>
+
+        <div class="events-container" id="events-container">
+            <!-- Events will be dynamically added via JS -->
+        </div>
+    </section>
+
+    <!-- Add Event Modal -->
+    <div id="add-event-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">×</span>
+            <h2>Add New Event</h2>
+            <form id="add-event-form">
+                <input type="text" id="event-title" placeholder="Event Title" required>
+                <select id="event-category" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="tech">Tech</option>
+                    <option value="cultural">Cultural</option>
+                    <option value="sports">Sports</option>
+                    <option value="academic">Academic</option>
+                    <option value="workshops">Workshops</option>
+                    <option value="hackathons">Hackathons</option>
+                    <option value="clubs">Clubs</option>
+                </select>
+                <input type="datetime-local" id="event-date" required>
+                <input type="text" id="event-venue" placeholder="Venue" required>
+                <input type="text" id="event-organizer" placeholder="Organizer" required>
+                <input type="url" id="event-link" placeholder="Registration Link" required>
+                <button type="submit" class="submit-btn">Add Event</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Update Event Modal -->
+    <div id="update-event-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-update-modal" class="close">×</span>
+            <h2>Update Event</h2>
+            <form id="update-event-form">
+                <input type="hidden" id="update-event-index">
+                <input type="text" id="update-event-title" placeholder="Event Title" required>
+                <select id="update-event-category" required>
+                    <option value="" disabled>Select Category</option>
+                    <option value="tech">Tech</option>
+                    <option value="cultural">Cultural</option>
+                    <option value="sports">Sports</option>
+                    <option value="academic">Academic</option>
+                    <option value="workshops">Workshops</option>
+                    <option value="hackathons">Hackathons</option>
+                    <option value="clubs">Clubs</option>
+                </select>
+                <input type="datetime-local" id="update-event-date" required>
+                <input type="text" id="update-event-venue" placeholder="Venue" required>
+                <input type="text" id="update-event-organizer" placeholder="Organizer" required>
+                <input type="url" id="update-event-link" placeholder="Registration Link" required>
+                <button type="submit" class="submit-btn">Update Event</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cancel Event Modal -->
+    <div id="cancel-event-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-cancel-modal" class="close">×</span>
+            <h2>Cancel Event</h2>
+            <p>Are you sure you want to cancel this event?</p>
+            <input type="hidden" id="cancel-event-index">
+            <div class="modal-buttons">
+                <button id="confirm-cancel-btn" class="cancel-btn">Yes, Cancel</button>
+                <button id="cancel-cancel-btn" class="submit-btn">No, Keep</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 IIT Patna. All rights reserved.</p>
+    </footer>
+
+    <script src="EventOrganiser.js"></script>
+</body>
+</html>
